@@ -409,6 +409,7 @@ opacity: 0;
 }
 
 .skills-container {
+    min-height: 100vh;
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 20px;
@@ -440,7 +441,7 @@ opacity: 0;
 .skills-content {
   display: flex;
   gap: 40px;
-  align-items: flex-start;
+  align-items: center;
 }
 
 
@@ -541,3 +542,130 @@ opacity: 0;
 }
 
 
+.contact-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.contact-title {
+  text-align: center;
+  color: #4285f4;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.contact-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: #4285f4;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-control {
+  padding: 12px 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #4285f4;
+  box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.1);
+}
+
+
+textarea.form-control {
+  min-height: 200px;
+  resize: vertical;
+}
+
+.submit-btn {
+  align-self: flex-end;
+  background-color: #4285f4;
+  color: white;
+  padding: 12px 32px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #3367d6;
+}
+
+
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 20px;
+  }
+  
+  .submit-btn {
+    width: 100%;
+  }
+}
+
+
+
+.footer {
+  background-color: #0a192f;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer-name {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 2rem;
+}
+
+.social-link {
+  color: white;
+  font-size: 24px;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+}
+
+
+
+
+.social-link:hover {
+  transform: translateY(-3px);
+}
+
+.copyright {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
