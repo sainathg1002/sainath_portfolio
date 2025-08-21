@@ -24,3 +24,45 @@ links.forEach(link => {
         }
     }); // <-- Placed the semicolon here, inside the forEach loop.
 });
+
+
+
+const txt = document.querySelector('input[type="text"]');
+txt.addEventListener('change', () => {
+  console.log('Final name entered:', txt.value);
+});
+
+
+const message = document.querySelector('textarea');
+
+message.addEventListener('change', () => {
+  console.log('Textarea content:', message.value);
+});
+
+
+const form = document.querySelector('form');
+const btn = document.querySelector('button[type="submit"]');
+
+btn.addEventListener('click', () => {
+  console.log('Submit button clicked');
+});
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault(); // prevent page reload
+  console.log('Form submitted');
+});
+
+
+  const email = document.querySelector('input[type="email"]');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault(); // stop form from submitting by default
+
+    if (email.checkValidity()) {
+      console.log('✅ Valid email:', email.value);
+      alert('Form submitted successfully!');
+    } else {
+      console.log('❌ Invalid email format!');
+      alert('Please enter a valid email address.');
+    }
+  });
