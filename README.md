@@ -17,6 +17,7 @@ This is my personal portfolio website, designed to showcase my skills, projects,
 
 * [Header Section](#header-section)
 * [Home Section](#home-section)
+* [Education Section].(#education-section)
 * [Skills Section](#skills-section)
 * [Contact Form](#contact-form)
 * [Technologies Used](#technologies-used)
@@ -58,7 +59,9 @@ The home section is the main landing page and serves as a digital introduction t
   * The entrance of the elements is animated using CSS `@keyframes` to create a smooth, modern feel.
   * The layout dynamically changes on smaller screens to ensure readability and usability.
 ---
-
+### Education Section
+Education section is a part of the portfoliio,providing the clear education details about me.
+details are mentioned about my academics
 ### Skills Section
 
 The skills section is a key part of the portfolio, providing a visual representation of my technical abilities.
@@ -119,4 +122,5 @@ Feel free to connect with me!
 
 
 Gemini can make mistakes, so double-check it
+
 
