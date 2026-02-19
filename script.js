@@ -57,27 +57,35 @@ if (contactForm) {
         e.preventDefault();
         
         const formStatus = document.getElementById('formStatus');
-        const name = this.querySelector('input[name="name"]').value;
-        const email = this.querySelector('input[name="email"]').value;
-        const message = this.querySelector('textarea[name="message"]').value;
+        const nameInput = this.querySelector('input[name="name"]');
+        const emailInput = this.querySelector('input[name="email"]');
+        const messageInput = this.querySelector('textarea[name="message"]');
+        const name = nameInput ? nameInput.value.trim() : '';
+        const email = emailInput ? emailInput.value.trim() : '';
+        const message = messageInput ? messageInput.value.trim() : '';
         
         if (name && email && message) {
-            // Show success message
-            formStatus.textContent = 'Thank you for your message! I will get back to you soon.';
-            formStatus.style.color = '#22C55E';
-            formStatus.style.marginTop = '1rem';
-            
-            // Reset form
+            const subject = encodeURIComponent(`Portfolio Contact from ${name}`);
+            const body = encodeURIComponent(
+                `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+            );
+
+            // Opens the user's default email client with a prefilled draft.
+            window.location.href = `mailto:sainathg1002@gmail.com?subject=${subject}&body=${body}`;
+
+            if (formStatus) {
+                formStatus.textContent = 'Email draft opened in your mail app.';
+                formStatus.style.color = '#22C55E';
+                formStatus.style.marginTop = '1rem';
+            }
+
             this.reset();
-            
-            // Clear message after 5 seconds
-            setTimeout(() => {
-                formStatus.textContent = '';
-            }, 5000);
         } else {
-            formStatus.textContent = 'Please fill in all fields.';
-            formStatus.style.color = '#EF4444';
-            formStatus.style.marginTop = '1rem';
+            if (formStatus) {
+                formStatus.textContent = 'Please fill in all fields.';
+                formStatus.style.color = '#EF4444';
+                formStatus.style.marginTop = '1rem';
+            }
         }
     });
 }
